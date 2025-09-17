@@ -57,6 +57,13 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        wedding: {
+          gold: "hsl(var(--wedding-gold))",
+          "gold-light": "hsl(var(--wedding-gold-light))",
+          dark: "hsl(var(--wedding-dark))",
+          bg: "hsl(var(--wedding-bg))",
+          particle: "hsl(var(--wedding-particle))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
