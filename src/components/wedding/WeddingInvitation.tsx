@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { AnimatedBackground } from './AnimatedBackground';
 import { WeddingLogo } from './WeddingLogo';
 import { WeddingDetails } from './WeddingDetails';
@@ -6,53 +6,97 @@ import { PhotoGallery } from './PhotoGallery';
 import { WeddingSchedule } from './WeddingSchedule';
 import { RSVPSection } from './RSVPSection';
 import { Button } from '@/components/ui/button';
+import openingImg from '../images/cover/cover3.gif';
+
+// 🎵 import local audio
+import weddingSong from '../adio_background/audio_bk.mp3';
 
 export const WeddingInvitation = () => {
+  const [showImage, setShowImage] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
 
+  // audio ref
+  const audioRef = useRef<HTMLAudioElement>(null);
+
   const handleOpenInvitation = () => {
-    setShowDetails(true);
+    setShowImage(true);
+
+    // play the imported audio
+    if (audioRef.current) {
+      audioRef.current.play().catch((err) => {
+        console.log('Autoplay blocked:', err);
+      });
+    }
+
+    // show details after delay
+    setTimeout(() => {
+      setShowDetails(true);
+    }, 1500);
   };
 
   return (
-    <div className="min-h-screen relative">
-      <AnimatedBackground />
-      
-      {!showDetails ? (
-        // Landing Page
-        <div className="min-h-screen flex flex-col items-center justify-center px-6 text-center">
-          <WeddingLogo />
-          
-          <div className="mt-8 space-y-4 fade-in">
-            <p className="text-lg md:text-xl wedding-text">សូមគោរពអញ្ជើញ</p>
-            <h1 className="text-2xl md:text-3xl font-bold wedding-text">ទុនសុីន នីតា</h1>
-          </div>
+    <div className="relative min-h-screen">
+      {/* Fixed Background */}
+      <div className="fixed inset-0 w-full h-full z-0">
+        <AnimatedBackground />
+      </div>
 
-          <div className="mt-12 fade-in">
-            <Button
-              onClick={handleOpenInvitation}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg wedding-glow transform hover:scale-105 transition-all duration-300"
-            >
-              <div className="flex items-center space-x-2">
-                <span>បើកធៀប</span>
-                <div className="w-4 h-4 bg-current rounded-full animate-pulse"></div>
-              </div>
-            </Button>
-            
-            <p className="mt-4 text-sm wedding-text opacity-80">
-              សូមមេត្តាចុចលើអេក្រង់ដើម្បីបើកធៀបអេឡិចត្រូនិច
-            </p>
+      {/* Hidden Audio Element */}
+      <audio ref={audioRef} src={weddingSong} loop />
+
+      {/* Content */}
+      <div className="relative z-10">
+        {!showImage && !showDetails ? (
+          <div className="flex flex-col items-center justify-center min-h-screen text-center px-6">
+            <WeddingLogo />
+            <div className="mt-8 space-y-4 fade-in">
+              <p className="text-[16px] wedding-text" style={{ fontFamily: 'Hanuman' }}>
+                សូមគោរពអញ្ជើញ
+              </p>
+              <h1
+                className="text-[18px] font-bold wedding-text"
+                style={{ fontFamily: 'Bayon' }}
+              >
+                ភ្ញៀវកិត្តិយស ក្នុងពិធីរៀបអាពាណ៍ពិពាណ៍របស់យើងខ្ញុំ
+              </h1>
+            </div>
+
+            <div className="mt-10 fade-in">
+              <Button
+                onClick={handleOpenInvitation}
+                variant="ghost-belnd"
+                className="p-0 hover:scale-105 transition-transform duration-300"
+              >
+                <img
+                  src="https://i.ibb.co/Cpj2tJsB/open-km.webp"
+                  alt="Open Invitation"
+                  className="w-15 h-16"
+                />
+              </Button>
+
+              <p className="text-[12px] wedding-text" style={{ fontFamily: 'Hanuman' }}>
+                សូមមេត្តាចុចលើអេក្រង់ដើម្បីបើកធៀបអេឡិចត្រូនិច
+              </p>
+            </div>
           </div>
-        </div>
-      ) : (
-        // Full Invitation Content
-        <div className="min-h-screen">
-          <WeddingDetails />
-          <PhotoGallery />
-          <WeddingSchedule />
-          <RSVPSection />
-        </div>
-      )}
+        ) : showImage && !showDetails ? (
+          <div className="flex items-center justify-center min-h-screen">
+            <img
+              src={openingImg}
+              alt="Opening..."
+              className="w-screen h-screen object-cover animate-pulse-60s"
+            />
+          </div>
+        ) : (
+          <div className="max-w-6xl mx-auto px-6 py-20 space-y-20 fade-in">
+            <WeddingDetails />
+            
+            <PhotoGallery />
+            <WeddingSchedule />
+            <RSVPSection />
+          </div>
+        )}
+      </div>
     </div>
   );
 };

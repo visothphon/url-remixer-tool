@@ -3,22 +3,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>សុខអូន & សុថាណេត - សិរីមង្គលអាពាហ៍ពិពាហ៍</title>
-    <meta name="description" content="សិរីមង្គលអាពាហ៍ពិពាហ៍របស់ សុខអូន និង សុថាណេត - ថ្ងៃទី០៥​ ខែមករា ឆ្នាំ២០២៥" />
-    <meta name="author" content="Ananisai Wedding Invitations" />
+    <title>ទុនស៊ីន & នីតា - សិរីមង្គលអាពាហ៍ពិពាហ៍</title>
+    <meta name="description" content="សិរីមង្គលអាពាហ៍ពិពាហ៍របស់ ទុនស៊ីន និង នីតា - ថ្ងៃទី០៥​ ខែមករា ឆ្នាំ២០២៥" />
+    <meta name="author" content="TunsinNita Wedding Invitations" />
 
-    <meta property="og:title" content="សុខអូន & សុថាណេត - សិរីមង្គលអាពាហ៍ពិពាហ៍" />
-    <meta property="og:description" content="សិរីមង្គលអាពាហ៍ពិពាហ៍របស់ សុខអូន និង សុថាណេត - ថ្ងៃទី០៥​ ខែមករា ឆ្នាំ២០២៥" />
+    <meta property="og:title" content="ទុនស៊ីន & នីតា - សិរីមង្គលអាពាហ៍ពិពាហ៍" />
+    <meta property="og:description" content="សិរីមង្គលអាពាហ៍ពិពាហ៍របស់ ទុនស៊ីន និង នីតា - ថ្ងៃទី០៥​ ខែមករា ឆ្នាំ២០២៥" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <!-- ✅ Add Google Fonts here -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanuman:wght@400;700&family=Moul&family=Bayon&display=swap"
+      rel="stylesheet"
+    />
   </head>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%; /* make sure it fits full screen */
+    }
+
+    #root {
+      position: relative;
+      width: 100%;
+      height: auto;
+      background-image: url('/src/components/images/cover/cover4.gif');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      z-index: 0; /* make sure it's under your content */
+    }
+
+    /* Blue overlay only on background */
+    #root::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(40, 40, 71, 0.35); /* adjust 0.35 for transparency */
+      z-index: -1; /* keep it behind everything */
+    }
+  </style>
 
   <body>
     <div id="root"></div>
+
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
