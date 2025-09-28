@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import WeddingLogo from '../images/logo/logo.png'
+
 
 export const WeddingDetails = () => {
   return (
@@ -48,7 +50,7 @@ export const WeddingDetails = () => {
         {/* Logo */}
         <div className="flex-shrink-0">
           <img
-            src="https://i.ibb.co/YFSbY45t/11.png"
+            src={WeddingLogo}
             alt="Wedding Logo"
             className="w-28 md:w-36"
           />

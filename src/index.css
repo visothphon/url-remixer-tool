@@ -55,6 +55,8 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
+
+
     --background: 224 71% 4%;
     --foreground: 45 100% 85%;
 
@@ -214,4 +216,8 @@ All colors MUST be HSL.
   .wedding-glow {
     box-shadow: 0 0 30px hsl(var(--wedding-gold) / 0.3);
   }
+
+  #root {
+  min-height: 100vh;
+}
 }

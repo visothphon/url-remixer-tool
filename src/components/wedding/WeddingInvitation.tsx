@@ -8,6 +8,7 @@ import { RSVPSection } from './RSVPSection';
 import { Button } from '@/components/ui/button';
 import openingImg from '../images/cover/cover3.gif';
 
+
 // 🎵 import local audio
 import weddingSong from '../adio_background/audio_bk.mp3';
 
