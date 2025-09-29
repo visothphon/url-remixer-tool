@@ -37,13 +37,13 @@ export const WeddingDetails = () => {
             className="text-[14px] !text-white wedding-text"
             style={{ fontFamily: "Koulen" }}
           >
-            ជីវ
+            ផុន
           </h2>
           <p
             className="text-[14px] !text-white wedding-text"
             style={{ fontFamily: "Koulen" }}
           >
-            ទុនស៊ីន
+            វិស្សុត
           </p>
         </div>
 
@@ -68,13 +68,13 @@ export const WeddingDetails = () => {
             className="text-[14px] !text-white wedding-text"
             style={{ fontFamily: "Koulen" }}
           >
-            វណ្ណ
+            អឿន
           </h2>
           <h2
             className="text-[14px] !text-white wedding-text"
             style={{ fontFamily: "Koulen" }}
           >
-            សុផាតនីតា
+            វិច្ឆិកា
           </h2>
         </div>
       </motion.div>
@@ -94,7 +94,7 @@ export const WeddingDetails = () => {
           className="font-bold text-[18px] !text-white wedding-text"
           style={{ fontFamily: "Koulen" }}
         >
-          ថ្ងៃទី០៥ ខែមករា ឆ្នាំ២០២៥
+          ត្រូវនិងថ្ងៃទី០២ ខែវិច្ឆិកា ឆ្នាំ២០២៥
         </h3>
       </motion.div>
 
@@ -129,8 +129,8 @@ export const WeddingDetails = () => {
             viewport={{ once: true }}
             className="flex flex-col items-start space-y-2 text-left"
           >
-            <p className="text-yellow-400 wedding">លោក ជាង ជីវ</p>
-            <h2 className="text-yellow-400 wedding">អ្នកស្រី ប៊ុន ណៃ</h2>
+            <p className="text-yellow-400 wedding">លោក ឈុន លិះ</p>
+            <h2 className="text-yellow-400 wedding">លោកស្រី ផុន សុភា</h2>
           </motion.div>
 
           {/* Bride (Right) */}
@@ -141,8 +141,8 @@ export const WeddingDetails = () => {
             viewport={{ once: true }}
             className="flex flex-col items-end space-y-2 text-right"
           >
-            <p className="text-yellow-400 wedding">កូនស្រីនាម</p>
-            <h2 className="text-yellow-400 wedding">វណ្ណ</h2>
+            <p className="text-yellow-400 wedding">លោក លេស សំអឿន</p>
+            <h2 className="text-yellow-400 wedding">លោកស្រី វិ សារឿន</h2>
           </motion.div>
         </div>
       </motion.div>
@@ -153,18 +153,18 @@ export const WeddingDetails = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.7 }}
         viewport={{ once: true }}
-        className="mt-10 font-bold text-yellow-400 wedding mb-12 text-[11px]"
+        className="mt-10 font-bold text-yellow-400 wedding mb-12 text-[10px]"
         style={{ fontFamily: "Bayon" }}
       >
         <p>
-          ឯកឧត្តម លោកជំទាវ លោក លោកស្រី អ្នកនាងកញ្ញា អញ្ជើញចូលរួមកម្មវិធីជាអធិបតី
+          សម្តេច ទ្រង់ ឯកឧត្តម លោកអ្នកឧញ៉ា អ្នកឧញ៉ាឧញ៉ា លោកជំទាវ លោក លោកស្រី អ្នកនាងកញ្ញា
         </p>
         <p>
-          និងជាភ្ញៀវកិត្តិយស ដើម្បីប្រសិទ្ធពរជ័យ សិរីសួស្តី ជ័យមង្គល ក្នុងពិធីរៀបអាពាណ៍ពិពាណ៍
-          កូនប្រុស-កូនស្រី
+          អញ្ជើញចូលរួមកម្មវិធីជាអធិបតី និងជាភ្ញៀវកិត្តិយស ដើម្បីប្រសិទ្ធពរជ័យ សិរីសួស្តីជ័យមង្គល 
         </p>
-        <p>របស់យើងខ្ញុំ</p>
+        <p>ក្នុងពិធីរៀបអាពាណ៍ពិពាណ៍ កូនប្រុស-កូនស្រី របស់យើងខ្ញុំ</p>
       </motion.div>
+
 
       {/* Groom & Bride Again */}
       <motion.div
@@ -187,13 +187,13 @@ export const WeddingDetails = () => {
               className="text-[14px] !text-white wedding-text"
               style={{ fontFamily: "Koulen" }}
             >
-              ជីវ
+              ផុន
             </h2>
             <p
               className="text-[14px] !text-white wedding-text"
               style={{ fontFamily: "Koulen" }}
             >
-              ទុនស៊ីន
+              វិស្សុត
             </p>
           </div>
 
@@ -218,17 +218,35 @@ export const WeddingDetails = () => {
               className="text-[14px] !text-white wedding-text"
               style={{ fontFamily: "Koulen" }}
             >
-              វណ្ណ
+              អឿន
             </h2>
             <h2
               className="text-[14px] !text-white wedding-text"
               style={{ fontFamily: "Koulen" }}
             >
-              សុផាតនីតា
+              វិច្ឆិកា
             </h2>
           </div>
         </div>
 
+        {/* Parents Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.7 }}
+        viewport={{ once: true }}
+        className="mt-10 font-bold text-yellow-400 wedding mb-12 text-[10px]"
+        style={{ fontFamily: "Bayon" }}
+      >
+        <h1 
+          className="text-[24px] text-gold wedding mb-6"
+          style={{ fontFamily: "Koulen" }}
+          >
+          និង ពិសាភោជនាហារ
+        </h1>
+      </motion.div>
+        
+        
         {/* Date & Time */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -238,7 +256,19 @@ export const WeddingDetails = () => {
           className="mt-12 space-y-2"
         >
             <p className="text-lg text-yellow-400 wedding-text">
-              ដែលនឹងប្រព្រឹត្តទៅ ចាប់ពីម៉ោង7:00នាទី ព្រឹក
+              ដែលនឹងប្រព្រឹត្តទៅត្រូវនិងថ្ងៃអាទិត្យ ១២កើត ខែកត្តិក ឆ្នាំម្សាញ់ សប្តស័ក ព.ស២៥៦៩
+            </p>
+            <p> 
+              ត្រូវនិងថ្ងៃទី០២ ខែវិច្ឆិកា ឆ្នាំ២០២៥ វេលាម៉ោង ៥:០០នាទីល្ងាច
+            </p>
+            <p>
+              នៅមជ្ឃមណ្ឌល មហាសាល (អាគារA) ស្ថិតនៅ ក្រុងសិរិសោភ័ណ្ឌ
+            </p>
+            <p> 
+              ខេត្តបន្ទាយមានជ័យ ដោយមេត្រីភាព។
+            </p>
+            <p> 
+              សូមអរគុណ
             </p>
             <h3
               className="font-bold text-[18px] !text-white wedding-text"

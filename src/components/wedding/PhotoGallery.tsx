@@ -53,7 +53,7 @@ export const PhotoGallery = () => {
     <section className="py-6 px-6">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-center mb-6 text-[24px] text-yellow-400" style={{ fontFamily: 'Moulpali' }}>
-          ទុនស៊ីននីតា
+          <u>វិស្សុត&វិច្ឆិកា </u>
         </h2>
 
         <div className="space-y-1">
