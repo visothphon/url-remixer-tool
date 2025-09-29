@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+  
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,19 +17,33 @@
     <meta name="twitter:site" content="@lovable_dev" />
 
     <!-- ✅ Add Google Fonts here -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Hanuman:wght@400;700&family=Moul&family=Bayon&display=swap"
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Hanuman:wght@400;700&family=Moul&family=Bayon&display=swap&subset=khmer" 
       rel="stylesheet"
     />
+    
   </head>
 
   <style>
+    
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
       width: 100%; /* make sure it fits full screen */
+      font-family: 'Hanuman', sans-serif;
     }
+
+    /* Headings use Moul */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Moul', cursive;
+    }
+
+    /* Optional special title */
+    .title {
+      font-family: 'Bayon', sans-serif;
+
+        }
 
     #root {
       position: relative;
@@ -51,8 +66,9 @@
       z-index: -1; /* keep it behind everything */
     }
   </style>
-
   <body>
+    
+    
     <div id="root"></div>
 
     <script type="module" src="/src/main.tsx"></script>

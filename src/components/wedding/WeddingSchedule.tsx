@@ -1,6 +1,9 @@
 import { Button } from '@/components/ui/button';
-import { ExternalLink, MapPin, Calendar } from 'lucide-react';
+import { ExternalLink, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
+import mapQr from '../images/qrcode/map.png';
+import ABAqr from '../images/qrcode/ABAqr.png';
+
 
 export const WeddingSchedule = () => {
   const openMap = () => {
@@ -23,49 +26,89 @@ export const WeddingSchedule = () => {
           សិរីមង្គលអាពាហ៍ពិពាហ៍
         </h2>
         
-       <motion.div
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.9 }}
           viewport={{ once: true }}
           className="mt-12 space-y-2"
         >
-            <p className="text-lg text-yellow-400 wedding-text">
-              ដែលនឹងប្រព្រឹត្តទៅត្រូវនិងថ្ងៃទី០២ ខែវិច្ឆិកា ឆ្នាំ២០២៥ វេលាម៉ោង ៥:០០នាទីល្ងាច
-            </p>
-            <p> 
-              
-            </p>
-            <p>
-              នៅមជ្ឃមណ្ឌល មហាសាល (អាគារA) ស្ថិតនៅ ក្រុងសិរិសោភ័ណ្ឌ
-            </p>
-            <p> 
-              ខេត្តបន្ទាយមានជ័យ ដោយមេត្រីភាព។
-            </p>
-            <p> 
-              <u>សូមអរគុណ</u>
-            </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+          <p className="text-lg text-yellow-400 wedding-text">
+            ដែលនឹងប្រព្រឹត្តទៅត្រូវនិងថ្ងៃទី០២ ខែវិច្ឆិកា ឆ្នាំ២០២៥ វេលាម៉ោង ៥:០០នាទីល្ងាច
+          </p>
+          <p>នៅមជ្ឃមណ្ឌល មហាសាល (អាគារA) ស្ថិតនៅ ក្រុងសិរិសោភ័ណ្ឌ</p>
+          <p>ខេត្តបន្ទាយមានជ័យ ដោយមេត្រីភាព។</p>
+          <p><u>សូមអរគុណ</u></p>
+
+          {/* Map Button */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12 mt-12">
             <Button 
-                onClick={openMap}
-                variant="outline"
-                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground wedding-glow"
+              onClick={openMap}
+              variant="outline"
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground wedding-glow"
             >
-            <MapPin className="w-4 h-4 mr-2" />
-                បើកផែនទី
+              <MapPin className="w-4 h-4 mr-2" />
+              បើកផែនទី
               <ExternalLink className="w-4 h-4 ml-2" />
             </Button>
+          </div>
+
+          {/* Two Images in One Row */}
+          <div className="flex justify-center gap-10 mt-12">
+          {/* Image 1 */}
+          <div className="text-center">
+            {/* Text above image */}
+            <p className="mb-2 text-sm wedding-text font-semibold">MAP QR</p>
+
+            {/* The image */}
+            <img 
+              src={mapQr} 
+              alt="Wedding photo 1" 
+              className="w-40 sm:w-56 rounded-xl shadow-lg"
+            />
+
+            {/* Text under image */}
+            <p className="mt-2 text-sm wedding-text">សូមស្កេន ដើម្បីបើកផែនទី</p>
+            </div>
+            {/* Image 2 */}
+            <div className="text-center">
+              {/* Text above image */}
+              <p className="mb-2 text-sm wedding-text font-semibold">ABA QR</p>
+
+              {/* The image */}
+              <img 
+                src={ABAqr} 
+                alt="Wedding photo 2" 
+                className="w-40 sm:w-56 rounded-xl shadow-lg"
+              />
+
+              {/* Text under image */}
+              <p className="mt-2 text-sm wedding-text">003 017 666</p>
+              <p className="mt-2 text-sm wedding-text">PHON V.& OEUN V.</p>
+            </div>
+          </div>
+
+          <div>
+            <p>
+              ទំនាក់ទំនងម្ចាស់កម្មវិធី
+            </p>
+            <p>
+              089 788 677
+            </p>
+            <p>
+              012 585 676
+            </p>
           </div>
         </motion.div>
       </div>
 
+      {/* Footer */}
       <motion.div 
         className="max-w-2xl mx-auto text-center fade-in"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5, delay: 0.6 }}
       >
-        {/* Footer */}
         <div className="mt-20 pt-12 border-t border-primary/20 weeding-text">
           <div className="wedding-text opacity-60 text-sm space-y-2">
             <p>តើលោកអ្នកចាប់អារម្មណ៍នឹងប្រើប្រាស់សេវាកម្មរបស់ពួកយើងដែរឬទេ?</p>
