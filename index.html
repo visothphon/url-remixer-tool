@@ -30,10 +30,10 @@
       margin: 0;
       padding: 0;
       height: 100%;
-      width: 100%; /* make sure it fits full screen */
+      width: 100%;
       font-family: 'Hanuman', sans-serif;
+      overflow-x: hidden;
     }
-
     /* Headings use Moul */
     h1, h2, h3, h4, h5, h6 {
       font-family: 'Moul', cursive;
@@ -45,6 +45,7 @@
 
         }
 
+        
     #root {
       position: relative;
       width: 100%;
@@ -57,14 +58,14 @@
       z-index: 0; /* make sure it's under your content */
     }
 
-    /* Blue overlay only on background */
     #root::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(40, 40, 71, 0.35); /* adjust 0.35 for transparency */
-      z-index: -1; /* keep it behind everything */
-    }
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(40, 40, 71, 0.35);
+        z-index: -1;
+      }
+
   </style>
   <body>
     

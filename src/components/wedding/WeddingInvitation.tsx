@@ -8,8 +8,7 @@ import { RSVPSection } from './RSVPSection';
 import { Button } from '@/components/ui/button';
 import openingImg from '../images/cover/cover3.gif';
 
-
-// 🎵 import local audio
+// 🎵 Import local audio
 import weddingSong from '../adio_background/audio_bk.mp3';
 
 export const WeddingInvitation = () => {
@@ -22,7 +21,7 @@ export const WeddingInvitation = () => {
   const handleOpenInvitation = () => {
     setShowImage(true);
 
-    // play the imported audio
+    // play audio
     if (audioRef.current) {
       audioRef.current.play().catch((err) => {
         console.log('Autoplay blocked:', err);
@@ -37,27 +36,34 @@ export const WeddingInvitation = () => {
 
   return (
     <div className="relative min-h-screen">
-      {/* Fixed Background */}
+
+      {/* ===== Fixed Background Layer ===== */}
       <div className="fixed inset-0 w-full h-full z-0">
         <AnimatedBackground />
+        {showImage && !showDetails && (
+          <img
+            src={openingImg}
+            alt="Opening..."
+            className="w-full h-full object-cover animate-pulse-60s"
+          />
+        )}
       </div>
 
-      {/* Hidden Audio Element */}
+      {/* ===== Hidden Audio Element ===== */}
       <audio ref={audioRef} src={weddingSong} loop />
 
-      {/* Content */}
+      {/* ===== Foreground Content ===== */}
       <div className="relative z-10">
-        {!showImage && !showDetails ? (
+
+        {/* Initial Open Invitation Screen */}
+        {!showImage && !showDetails && (
           <div className="flex flex-col items-center justify-center min-h-screen text-center px-6">
             <WeddingLogo />
             <div className="mt-8 space-y-4 fade-in">
               <p className="text-[16px] wedding-text" style={{ fontFamily: 'Hanuman' }}>
                 សូមគោរពអញ្ជើញ
               </p>
-              <h1
-                className="text-[18px] font-bold wedding-text"
-                style={{ fontFamily: 'Bayon' }}
-              >
+              <h1 className="text-[18px] font-bold wedding-text" style={{ fontFamily: 'Bayon' }}>
                 ភ្ញៀវកិត្តិយស ក្នុងពិធីរៀបអាពាណ៍ពិពាណ៍របស់យើងខ្ញុំ
               </h1>
             </div>
@@ -80,23 +86,23 @@ export const WeddingInvitation = () => {
               </p>
             </div>
           </div>
-        ) : showImage && !showDetails ? (
-          <div className="flex items-center justify-center min-h-screen">
-            <img
-              src={openingImg}
-              alt="Opening..."
-              className="w-screen h-screen object-cover animate-pulse-60s"
-            />
-          </div>
-        ) : (
+        )}
+
+        {/* Spacer while Opening GIF plays */}
+        {showImage && !showDetails && (
+          <div className="min-h-screen" />
+        )}
+
+        {/* Main Wedding Details */}
+        {showDetails && (
           <div className="max-w-6xl mx-auto px-6 py-20 space-y-20 fade-in">
             <WeddingDetails />
-            
             <PhotoGallery />
             <WeddingSchedule />
             <RSVPSection />
           </div>
         )}
+
       </div>
     </div>
   );
