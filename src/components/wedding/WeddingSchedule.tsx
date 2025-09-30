@@ -19,10 +19,10 @@ export const WeddingSchedule = () => {
       className="mt-12 space-y-2"
     >
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold wedding-text mb-6">
+        <h2 className="text-3xl md:text-4xl font-bold wedding-text mb-6 kantumruy">
           កម្មវិធី
         </h2>
-        <h2 className="text-3xl md:text-4xl font-bold wedding-text mb-6">
+        <h2 className="text-3xl md:text-4xl font-bold wedding-text mb-6 font-moul">
           សិរីមង្គលអាពាហ៍ពិពាហ៍
         </h2>
         
@@ -33,12 +33,12 @@ export const WeddingSchedule = () => {
           viewport={{ once: true }}
           className="mt-12 space-y-2"
         >
-          <p className="text-lg text-yellow-400 wedding-text">
+          <p className="text-lg text-yellow-400 wedding-text font-kantumruy">
             ដែលនឹងប្រព្រឹត្តទៅត្រូវនិងថ្ងៃទី០២ ខែវិច្ឆិកា ឆ្នាំ២០២៥ វេលាម៉ោង ៥:០០នាទីល្ងាច
           </p>
-          <p>នៅមជ្ឃមណ្ឌល មហាសាល (អាគារA) ស្ថិតនៅ ក្រុងសិរិសោភ័ណ្ឌ</p>
-          <p>ខេត្តបន្ទាយមានជ័យ ដោយមេត្រីភាព។</p>
-          <p><u>សូមអរគុណ</u></p>
+          <p className="text-lg text-yellow-400 wedding-text font-kantumruy">នៅមជ្ឃមណ្ឌល មហាសាល (អាគារA) ស្ថិតនៅ ក្រុងសិរិសោភ័ណ្ឌ</p>
+          <p className="text-lg text-yellow-400 wedding-text font-kantumruy">ខេត្តបន្ទាយមានជ័យ ដោយមេត្រីភាព។</p>
+          <p className="text-lg text-yellow-400 wedding-text font-kantumruy">សូមអរគុណ!</p>
 
           {/* Map Button */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12 mt-12">
@@ -47,7 +47,7 @@ export const WeddingSchedule = () => {
               variant="outline"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground wedding-glow"
             >
-              <MapPin className="w-4 h-4 mr-2" />
+              <MapPin className="w-4 h-4 mr-2 font-kantumruy" />
               បើកផែនទី
               <ExternalLink className="w-4 h-4 ml-2" />
             </Button>
@@ -58,7 +58,7 @@ export const WeddingSchedule = () => {
           {/* Image 1 */}
           <div className="text-center">
             {/* Text above image */}
-            <p className="mb-2 text-sm wedding-text font-semibold">MAP QR</p>
+            <p className="mb-2 text-sm wedding-text font-kantumruy">MAP QR</p>
 
             {/* The image */}
             <img 
@@ -68,12 +68,12 @@ export const WeddingSchedule = () => {
             />
 
             {/* Text under image */}
-            <p className="mt-2 text-sm wedding-text">សូមស្កេន ដើម្បីបើកផែនទី</p>
+            <p className="mt-2 text-sm wedding-text font-kantumruy">សូមស្កេន ដើម្បីបើកផែនទី</p>
             </div>
             {/* Image 2 */}
             <div className="text-center">
               {/* Text above image */}
-              <p className="mb-2 text-sm wedding-text font-semibold">ABA QR</p>
+              <p className="mb-2 text-sm wedding-text font-kantumruy">ABA QR</p>
 
               {/* The image */}
               <img 
@@ -89,7 +89,7 @@ export const WeddingSchedule = () => {
           </div>
 
           <div>
-            <p>
+            <p className='font-kantumruy'>
               ទំនាក់ទំនងម្ចាស់កម្មវិធី
             </p>
             <p>
@@ -111,10 +111,10 @@ export const WeddingSchedule = () => {
       >
         <div className="mt-20 pt-12 border-t border-primary/20 weeding-text">
           <div className="wedding-text opacity-60 text-sm space-y-2">
-            <p>តើលោកអ្នកចាប់អារម្មណ៍នឹងប្រើប្រាស់សេវាកម្មរបស់ពួកយើងដែរឬទេ?</p>
-            <p>ទាក់ទងមកកាន់ពួកយើងឥឡូវនេះ</p>
+            <p className='font-kantumruy'>តើលោកអ្នកចាប់អារម្មណ៍នឹងប្រើប្រាស់សេវាកម្មរបស់ពួកយើងដែរឬទេ?</p>
+            <p className='font-kantumruy'>ទាក់ទងមកកាន់ពួកយើងឥឡូវនេះ</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-4">
-              <a href="tel:098456866" className="wedding-text hover:opacity-80">
+              <a href="tel:098456866" className="wedding-text hover:opacity-80 font-kantumruy">
                 លេខទូរស័ព្ទ: 016667892
               </a>
               <a href="mailto:ananisai.kh@gmail.com" className="wedding-text hover:opacity-80">

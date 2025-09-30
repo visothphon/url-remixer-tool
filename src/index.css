@@ -46,13 +46,24 @@ All colors MUST be HSL.
 /* Koulen */
 @font-face {
   font-family: 'Koulen';
-  src: url('/fonts/Koulen-Regular.ttf') format('truetype');
-  font-weight: 400;
+  src: url('./fonts/Koulen-Regular.ttf') format('truetype');
+  font-weight: normal;
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Moul";
+  src: url("./fonts/Moul-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
-
+@font-face {
+  font-family: "Kantumruy";
+  src: url("./fonts/KantumruyPro-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
 @media (max-width: 600px) {
   html, body {
@@ -65,8 +76,6 @@ All colors MUST be HSL.
   }
 }
 
-
-
 @layer base {
   :root {
 
@@ -75,7 +84,10 @@ All colors MUST be HSL.
     --foreground: 45 100% 85%;
 
     --font-moul: Moul-Regular, "sans-serif"; 
-
+    --font-kantumruy: KantumruyPro-Regular, "sans-serif";
+    --font-hanuman: Hanuman, "serif";
+    --font-bayon: Bayon, "serif";
+    --font-koulen: Koulen, "cursive";
 
 
     --card: 224 71% 4%;
