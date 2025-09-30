@@ -34,14 +34,14 @@ export const WeddingDetails = () => {
             កូនប្រុសនាម
           </p>
           <h2
-            className="text-[14px] !text-white wedding-text"
+            className="text-[14px] !text-[#e70ab2] wedding-text"
             style={{ fontFamily: "Koulen", fontSize: "16px" }}
           >
             ផុន
           </h2>
           <p
-            className="text-[14px] !text-white wedding-text"
-            style={{ fontFamily: "Koulen", fontSize: "16px" }}
+            className="text-[14px] !text-[#e70ab2] wedding-text"
+            style={{ fontFamily: "Koulen", fontSize: "16px"}}
           >
             វិស្សុត
           </p>
@@ -65,14 +65,14 @@ export const WeddingDetails = () => {
             កូនស្រីនាម
           </p>
           <h2
-            className="text-[14px] !text-white wedding-text"
+            className="text-[14px] !text-[#e70ab2] wedding-text"
             style={{ fontFamily: "Koulen", fontSize: "16px" }}
           >
             អឿន
           </h2>
           <h2
-            className="text-[14px] !text-white wedding-text"
-            style={{ fontFamily: "Koulen", fontSize: "16px" }}
+            className="text-[14px] !text-[#e70ab2] wedding-text"
+            style={{ fontFamily: "Koulen", fontSize: "16px"}}
           >
             វិច្ឆិកា
           </h2>
@@ -91,7 +91,7 @@ export const WeddingDetails = () => {
           ដែលនឹងប្រព្រឹត្តទៅនៅ
         </p>
         <h3
-          className="font-bold text-[18px] !text-white wedding-text font-moul"
+          className="font-bold text-[18px] !text-[#e70ab2] wedding-text font-moul"
         >
           ត្រូវនឹងថ្ងៃទី០២ ខែវិច្ឆិកា ឆ្នាំ២០២៥
         </h3>
@@ -181,13 +181,13 @@ export const WeddingDetails = () => {
               កូនប្រុសនាម
             </p>
             <h2
-              className="text-[14px] !text-white wedding-text"
-              style={{ fontFamily: "Koulen" }}
+              className="text-[14px] !text-[#e70ab2] wedding-text"
+              style={{ fontFamily: "Koulen"}}
             >
               ផុន
             </h2>
             <p
-              className="text-[14px] !text-white wedding-text"
+              className="text-[14px] !text-[#e70ab2] wedding-text"
               style={{ fontFamily: "Koulen" }}
             >
               វិស្សុត
@@ -211,14 +211,14 @@ export const WeddingDetails = () => {
               កូនស្រីនាម
             </p>
             <h2
-              className="text-[14px] !text-white wedding-text"
-              style={{ fontFamily: "Koulen" }}
+              className="text-[14px] wedding-text !text-[#e70ab2]"
+              style={{ fontFamily: "Koulen"}}
             >
               អឿន
             </h2>
             <h2
-              className="text-[14px] !text-white wedding-text"
-              style={{ fontFamily: "Koulen" }}
+              className="text-[14px] !text-[#e70ab2] wedding-text"
+              style={{ fontFamily: "Koulen"}}
             >
               វិច្ឆិកា
             </h2>
@@ -267,7 +267,7 @@ export const WeddingDetails = () => {
               សូមអរគុណ!
             </p>
             <h3
-              className="font-bold text-[18px] !text-white wedding-text"
+              className="font-bold text-[18px] !text-[#e70ab2] wedding-text"
               style={{ fontFamily: "Koulen" }}
             >
               ថ្ងៃទី០២ ខែវិច្ឆិកា ឆ្នាំ២០២៥

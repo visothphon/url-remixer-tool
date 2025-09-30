@@ -96,7 +96,7 @@ All colors MUST be HSL.
     --popover: 224 71% 4%;
     --popover-foreground: 45 100% 85%;
 
-    --primary: 45 100% 70%;
+    --primary: 45 100% 50%;
     --primary-foreground: 224 71% 4%;
 
     --secondary: 224 71% 8%;
@@ -105,7 +105,7 @@ All colors MUST be HSL.
     --muted: 224 71% 8%;
     --muted-foreground: 45 30% 60%;
 
-    --accent: 45 100% 70%;
+    --accent: 45 100% 50%;
     --accent-foreground: 224 71% 4%;
 
     --destructive: 0 84.2% 60.2%;
@@ -113,12 +113,12 @@ All colors MUST be HSL.
 
     --border: 224 71% 12%;
     --input: 224 71% 12%;
-    --ring: 45 100% 70%;
+    --ring: 45 100% 50%;
 
     --radius: 0.5rem;
     
     /* Custom wedding theme */
-    --wedding-gold: 45 100% 70%;
+    --wedding-gold: 45 100% 50%;
     --wedding-gold-light: 45 100% 85%;
     --wedding-dark: 224 71% 4%;
     --wedding-bg: 224 71% 4%;
@@ -151,7 +151,7 @@ All colors MUST be HSL.
     --popover: 224 71% 4%;
     --popover-foreground: 45 100% 85%;
 
-    --primary: 45 100% 70%;
+    --primary: 45 100% 50%;
     --primary-foreground: 224 71% 4%;
 
     --secondary: 224 71% 8%;
