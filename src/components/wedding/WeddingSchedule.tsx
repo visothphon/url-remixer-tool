@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { ExternalLink, MapPin } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { color, motion } from 'framer-motion';
 import mapQr from '../images/qrcode/map.png';
 import ABAqr from '../images/qrcode/ABAqr.png';
 
@@ -41,11 +41,12 @@ export const WeddingSchedule = () => {
           <p className="text-lg text-yellow-400 wedding-text font-kantumruy">សូមអរគុណ!</p>
 
           {/* Map Button */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12 mt-12">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12 mt-12" style={{padding: '15px'}}>
             <Button 
               onClick={openMap}
               variant="outline"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground wedding-glow"
+              className="border-primary !text-white hover:bg-primary hover:text-primary-foreground wedding-glow"
+              style={{ background: "red" , fontFamily: 'Kantumruy' }}
             >
               <MapPin className="w-4 h-4 mr-2 font-kantumruy" />
               បើកផែនទី
@@ -89,13 +90,13 @@ export const WeddingSchedule = () => {
           </div>
 
           <div>
-            <p className='font-kantumruy'>
+            <p className='font-kantumruy !text-[#e70ab2]'>
               ទំនាក់ទំនងម្ចាស់កម្មវិធី
             </p>
-            <p>
+            <p className='font-kantumruy !text-[#e70ab2]'>
               089 788 677
             </p>
-            <p>
+            <p className='font-kantumruy !text-[#e70ab2]'>
               012 585 676
             </p>
           </div>

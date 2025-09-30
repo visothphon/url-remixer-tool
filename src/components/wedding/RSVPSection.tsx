@@ -110,14 +110,14 @@ export const RSVPSection = () => {
         
         {/* Footer */}
         <div className="mt-20 pt-12 border-t border-primary/20 weeding-text">
-          <div className="wedding-text opacity-60 text-sm space-y-2">
-            <p>តើលោកអ្នកចាប់អារម្មណ៍នឹងប្រើប្រាស់សេវាកម្មរបស់ពួកយើងដែរឬទេ?</p>
+          <div className="wedding-text opacity-60 text-sm space-y-2 !text-[#e70ab2]">
+            <p className='!text-[#e70ab2]'>តើលោកអ្នកចាប់អារម្មណ៍នឹងប្រើប្រាស់សេវាកម្មរបស់ពួកយើងដែរឬទេ?</p>
             <p>ទាក់ទងមកកាន់ពួកយើងឥឡូវនេះ</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-4">
-              <a href="tel:098456866" className="wedding-text hover:opacity-80">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-4 !text-[#e70ab2]">
+              <a href="tel:098456866" className="!text-[#e70ab2] hover:opacity-80">
                 លេខទូរស័ព្ទ: 016667892
               </a>
-              <a href="mailto:ananisai.kh@gmail.com" className="wedding-text hover:opacity-80">
+              <a href="mailto:ananisai.kh@gmail.com" className="!text-[#e70ab2] hover:opacity-80">
                 E-mail: tunsinchhiv@gmail.com
               </a>
             </div>

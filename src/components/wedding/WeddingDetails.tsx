@@ -91,7 +91,8 @@ export const WeddingDetails = () => {
           ដែលនឹងប្រព្រឹត្តទៅនៅ
         </p>
         <h3
-          className="font-bold text-[18px] !text-[#e70ab2] wedding-text font-moul"
+          className="font-bold text-[18px] !text-[#e70ab2] wedding-text font-moul" 
+          style={{ marginTop: "15px" }}
         >
           ត្រូវនឹងថ្ងៃទី០២ ខែវិច្ឆិកា ឆ្នាំ២០២៥
         </h3>
