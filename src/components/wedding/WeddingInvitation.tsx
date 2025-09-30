@@ -99,7 +99,7 @@ export const WeddingInvitation = () => {
             <WeddingDetails />
             <PhotoGallery />
             <WeddingSchedule />
-            <RSVPSection />
+            {/* <RSVPSection /> */}
           </div>
         )}
 
