@@ -1,15 +1,43 @@
 import { Button } from '@/components/ui/button';
-import { Bold, ExternalLink, MapPin } from 'lucide-react';
+import { ExternalLink, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { useState } from 'react'; // ✅ add useState
+import { useState } from 'react'; 
 import mapQr from '../images/qrcode/map.svg';
-import ABAqr from '../images/qrcode/ABAqr.jpg';
+import telegramQr from '../images/qrcode/telegram.png';
 
 export const WeddingSchedule = () => {
-  const [showMap, setShowMap] = useState(false); // ✅ state for popup
+  // ✅ State for Map QR popup
+  const [showMap, setShowMap] = useState(false); 
+  // ✅ NEW: State for ABA QR popup
+  const [showABA, setShowABA] = useState(false); 
 
   const openMap = () => {
+    // NOTE: This URL seems incomplete and won't open a standard map. 
+    // You might want to replace it with a full Google Maps link later.
     window.open('https://maps.app.goo.gl/dgp3LCwcAC3QWMjR9', '_blank');
+  };
+
+  // ✅ Reusable Modal Component
+  const Modal = ({ src, alt, show, onClose }) => {
+    if (!show) return null;
+
+    return (
+      <div
+        className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
+        style={{ marginTop: '0px'}}
+        onClick={onClose} // Closes modal when clicking outside the image
+      >
+        <motion.img
+          src={src}
+          alt={alt}
+          className="max-w-[90%] max-h-[90%] rounded-xl shadow-2xl"
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.3 }}
+          onClick={(e) => e.stopPropagation()} // Prevents closing when clicking the image
+        />
+      </div>
+    );
   };
 
   return (
@@ -21,7 +49,7 @@ export const WeddingSchedule = () => {
       className="mt-12 space-y-2"
     >
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold wedding-text mb-6 kantumruy">
+        <h2 className="text-3xl md:text-4xl font-bold wedding-text mb-6 font-koulen">
           កម្មវិធី
         </h2>
         <h2 className="text-3xl md:text-4xl font-bold wedding-text mb-6 font-moul">
@@ -69,53 +97,51 @@ export const WeddingSchedule = () => {
               <p className="mb-2 text-sm wedding-text font-kantumruy">MAP QR</p>
               <img 
                 src={mapQr} 
-                alt="Wedding photo 1" 
+                alt="Map QR code" 
                 className="w-40 sm:w-56 rounded-xl shadow-lg cursor-pointer hover:scale-105 transition"
-                onClick={() => setShowMap(true)}
+                onClick={() => setShowMap(true)} // Set Map popup state
               />
               <p className="mt-2 text-sm wedding-text font-kantumruy">សូមស្កេន ដើម្បីបើកផែនទី</p>
             </div>
 
             {/* Image 2 - ABA QR */}
             <div className="text-center">
-              <p className="mb-2 text-sm wedding-text font-kantumruy">ABA QR</p>
+              <p className="mb-2 text-sm wedding-text font-kantumruy">TELEGRAM QR</p>
               <img 
-                src={ABAqr} 
-                alt="Wedding photo 2" 
-                className="w-40 sm:w-56 rounded-xl shadow-lg"
+                src={telegramQr} 
+                alt="TELEGRAM QR" 
+                className="w-40 sm:w-56 rounded-xl shadow-lg cursor-pointer hover:scale-105 transition" // ✅ Added cursor-pointer and hover
+                onClick={() => setShowABA(true)} // ✅ Set ABA popup state
               />
-              <p className="mt-2 text-sm wedding-text">003 017 666</p>
-              <p className="mt-2 text-sm wedding-text">PHON V.& OEUN V.</p>
+              <p className="mt-2 text-sm wedding-text">Vichhka Oeun</p>
             </div>
           </div>
 
           {/* Contact Info */}
-          <div style={{paddingTop: '15px'}} className="text-center space-y-1">
-            <p className='font-kantumruy !text-[#e70ab2]' style={{fontSize: "18px", fontWeight: "800"}}>ទំនាក់ទំនងម្ចាស់កម្មវិធី</p>
-            <p className='font-kantumruy !text-[#e70ab2]' style={{fontSize: "18px", fontWeight: "800"}}>089 788 677</p>
-            <p className='font-kantumruy !text-[#e70ab2]' style={{fontSize: "18px", fontWeight: "800"}}>012 585 676</p>
+          <div style={{paddingTop: '20px'}} className="text-center space-y-1">
+            <p className='font-kantumruy !text-[#e70ab2]' style={{fontSize: "16px", fontWeight: "800"}}>ទំនាក់ទំនងម្ចាស់កម្មវិធី</p>
+            <p className='font-kantumruy !text-[#e70ab2]' style={{fontSize: "16px", fontWeight: "800"}}>089 788 677</p>
+            <p className='font-kantumruy !text-[#e70ab2]' style={{fontSize: "16px", fontWeight: "800"}}>012 585 676</p>
           </div>
         </motion.div>
       </div>
 
-      {/* ✅ Popup Modal for Map QR */}
-      {showMap && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
-          onClick={() => setShowMap(false)}
-        >
-          <motion.img
-            src={mapQr}
-            alt="Map QR enlarged"
-            className="max-w-[90%] max-h-[90%] rounded-xl shadow-2xl"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.3 }}
-          />
-        </div>
-      )}
+      {/* Pop-up Modals */}
+      <Modal 
+        src={mapQr} 
+        alt="Map QR enlarged" 
+        show={showMap} 
+        onClose={() => setShowMap(false)} 
+      />
+      
+      <Modal 
+        src={telegramQr} 
+        alt="ABA QR enlarged" 
+        show={showABA} 
+        onClose={() => setShowABA(false)} 
+      />
 
-      {/* ✅ Footer section (kept from your original code) */}
+      {/* Footer section */}
       <motion.div 
         className="max-w-2xl mx-auto text-center fade-in"
         initial={{ opacity: 0 }}
