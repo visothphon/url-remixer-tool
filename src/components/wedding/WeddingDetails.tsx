@@ -259,7 +259,7 @@ export const WeddingDetails = () => {
               ត្រូវនឹងថ្ងៃទី០២ ខែវិច្ឆិកា ឆ្នាំ២០២៥ វេលាម៉ោង ៥:០០នាទីល្ងាច
             </p>
             <p className="text-lg text-yellow-400 wedding-text" style={{ fontFamily: "Kantumruy" }}>
-              នៅមជ្ឃមណ្ឌល មហាសាល (អាគារA) ស្ថិតនៅ ក្រុងសិរិសោភ័ណ្ឌ
+              នៅមជ្ឃមណ្ឌល មហាសាល (អាគារA) ស្ថិតនៅ ក្រុងសិរីសោភ័ណ
             </p>
             <p className="text-lg text-yellow-400 wedding-text" style={{ fontFamily: "Kantumruy" }}> 
               ខេត្តបន្ទាយមានជ័យ ដោយមេត្រីភាព។
