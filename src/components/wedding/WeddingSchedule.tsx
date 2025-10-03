@@ -3,7 +3,7 @@ import { Bold, ExternalLink, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useState } from 'react'; // ✅ add useState
 import mapQr from '../images/qrcode/map.svg';
-import ABAqr from '../images/qrcode/ABAqr.png';
+import ABAqr from '../images/qrcode/ABAqr.jpg';
 
 export const WeddingSchedule = () => {
   const [showMap, setShowMap] = useState(false); // ✅ state for popup
