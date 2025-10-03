@@ -88,7 +88,7 @@ export const WeddingDetails = () => {
         className="mt-12 space-y-2"
       >
         <p className="text-[16px] text-yellow-400 wedding-text font-kantumruy">
-          ដែលនឹងប្រព្រឹត្តទៅនៅ
+          ដែលនឹងប្រព្រឹត្តទៅ
         </p>
         <h3
           className="font-bold text-[18px] !text-[#e70ab2] wedding-text font-moul" 
@@ -161,7 +161,7 @@ export const WeddingDetails = () => {
         <p>
           អញ្ជើញចូលរួមកម្មវិធីជាអធិបតី និងជាភ្ញៀវកិត្តិយស ដើម្បីប្រសិទ្ធពរជ័យ សិរីសួស្តីជ័យមង្គល 
         </p>
-        <p>ក្នុងពិធីរៀបអាពាណ៍ពិពាណ៍ កូនប្រុស-កូនស្រី របស់យើងខ្ញុំ</p>
+        <p>ក្នុងពិធីរៀបអាពាហ៍ពិពាហ៍ កូនប្រុស-កូនស្រី របស់យើងខ្ញុំ</p>
       </motion.div>
 
 
@@ -253,10 +253,10 @@ export const WeddingDetails = () => {
           className="mt-12 space-y-2"
         >
             <p className="text-lg text-yellow-400 wedding-text" style={{ fontFamily: "Kantumruy" }}>
-              ដែលនឹងប្រព្រឹត្តទៅត្រូវនិងថ្ងៃអាទិត្យ ១២កើត ខែកត្តិក ឆ្នាំម្សាញ់ សប្តស័ក ព.ស២៥៦៩
+              ដែលនឹងប្រព្រឹត្តទៅត្រូវនឹងថ្ងៃអាទិត្យ ១២កើត ខែកត្តិក ឆ្នាំម្សាញ់ សប្តស័ក ព.ស២៥៦៩
             </p>
             <p className="text-lg text-yellow-400 wedding-text" style={{ fontFamily: "Kantumruy" }}> 
-              ត្រូវនិងថ្ងៃទី០២ ខែវិច្ឆិកា ឆ្នាំ២០២៥ វេលាម៉ោង ៥:០០នាទីល្ងាច
+              ត្រូវនឹងថ្ងៃទី០២ ខែវិច្ឆិកា ឆ្នាំ២០២៥ វេលាម៉ោង ៥:០០នាទីល្ងាច
             </p>
             <p className="text-lg text-yellow-400 wedding-text" style={{ fontFamily: "Kantumruy" }}>
               នៅមជ្ឃមណ្ឌល មហាសាល (អាគារA) ស្ថិតនៅ ក្រុងសិរិសោភ័ណ្ឌ

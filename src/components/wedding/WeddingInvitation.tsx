@@ -64,7 +64,7 @@ export const WeddingInvitation = () => {
                 សូមគោរពអញ្ជើញ
               </p>
               <h1 className="text-[18px] font-bold wedding-text" style={{ fontFamily: 'Bayon' }}>
-                ភ្ញៀវកិត្តិយស ក្នុងពិធីរៀបអាពាណ៍ពិពាណ៍របស់យើងខ្ញុំ
+                ភ្ញៀវកិត្តិយស ក្នុងពិធីរៀបអាពាហ៍ពិពាហ៍របស់យើងខ្ញុំ
               </h1>
             </div>
 

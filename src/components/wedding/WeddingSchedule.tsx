@@ -1,11 +1,13 @@
 import { Button } from '@/components/ui/button';
-import { ExternalLink, MapPin } from 'lucide-react';
-import { color, motion } from 'framer-motion';
-import mapQr from '../images/qrcode/map.png';
+import { Bold, ExternalLink, MapPin } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { useState } from 'react'; // ✅ add useState
+import mapQr from '../images/qrcode/map.svg';
 import ABAqr from '../images/qrcode/ABAqr.png';
 
-
 export const WeddingSchedule = () => {
+  const [showMap, setShowMap] = useState(false); // ✅ state for popup
+
   const openMap = () => {
     window.open('https://maps.app.goo.gl/dgp3LCwcAC3QWMjR9', '_blank');
   };
@@ -34,14 +36,20 @@ export const WeddingSchedule = () => {
           className="mt-12 space-y-2"
         >
           <p className="text-lg text-yellow-400 wedding-text font-kantumruy">
-            ដែលនឹងប្រព្រឹត្តទៅត្រូវនិងថ្ងៃទី០២ ខែវិច្ឆិកា ឆ្នាំ២០២៥ វេលាម៉ោង ៥:០០នាទីល្ងាច
+            ដែលនឹងប្រព្រឹត្តទៅត្រូវនឹងថ្ងៃទី០២ ខែវិច្ឆិកា ឆ្នាំ២០២៥ វេលាម៉ោង ៥:០០នាទីល្ងាច
           </p>
-          <p className="text-lg text-yellow-400 wedding-text font-kantumruy">នៅមជ្ឃមណ្ឌល មហាសាល (អាគារA) ស្ថិតនៅ ក្រុងសិរិសោភ័ណ្ឌ</p>
-          <p className="text-lg text-yellow-400 wedding-text font-kantumruy">ខេត្តបន្ទាយមានជ័យ ដោយមេត្រីភាព។</p>
-          <p className="text-lg text-yellow-400 wedding-text font-kantumruy">សូមអរគុណ!</p>
+          <p className="text-lg text-yellow-400 wedding-text font-kantumruy">
+            នៅមជ្ឃមណ្ឌល មហាសាល (អាគារA) ស្ថិតនៅ ក្រុងសិរិសោភ័ណ្ឌ
+          </p>
+          <p className="text-lg text-yellow-400 wedding-text font-kantumruy">
+            ខេត្តបន្ទាយមានជ័យ ដោយមេត្រីភាព។
+          </p>
+          <p className="text-lg text-yellow-400 wedding-text font-kantumruy">
+            សូមអរគុណ!
+          </p>
 
           {/* Map Button */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12 mt-12" style={{padding: '15px'}}>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12" style={{ padding: '15px' }}>
             <Button 
               onClick={openMap}
               variant="outline"
@@ -56,54 +64,58 @@ export const WeddingSchedule = () => {
 
           {/* Two Images in One Row */}
           <div className="flex justify-center gap-10 mt-12">
-          {/* Image 1 */}
-          <div className="text-center">
-            {/* Text above image */}
-            <p className="mb-2 text-sm wedding-text font-kantumruy">MAP QR</p>
-
-            {/* The image */}
-            <img 
-              src={mapQr} 
-              alt="Wedding photo 1" 
-              className="w-40 sm:w-56 rounded-xl shadow-lg"
-            />
-
-            {/* Text under image */}
-            <p className="mt-2 text-sm wedding-text font-kantumruy">សូមស្កេន ដើម្បីបើកផែនទី</p>
-            </div>
-            {/* Image 2 */}
+            {/* Image 1 - Map QR */}
             <div className="text-center">
-              {/* Text above image */}
-              <p className="mb-2 text-sm wedding-text font-kantumruy">ABA QR</p>
+              <p className="mb-2 text-sm wedding-text font-kantumruy">MAP QR</p>
+              <img 
+                src={mapQr} 
+                alt="Wedding photo 1" 
+                className="w-40 sm:w-56 rounded-xl shadow-lg cursor-pointer hover:scale-105 transition"
+                onClick={() => setShowMap(true)}
+              />
+              <p className="mt-2 text-sm wedding-text font-kantumruy">សូមស្កេន ដើម្បីបើកផែនទី</p>
+            </div>
 
-              {/* The image */}
+            {/* Image 2 - ABA QR */}
+            <div className="text-center">
+              <p className="mb-2 text-sm wedding-text font-kantumruy">ABA QR</p>
               <img 
                 src={ABAqr} 
                 alt="Wedding photo 2" 
                 className="w-40 sm:w-56 rounded-xl shadow-lg"
               />
-
-              {/* Text under image */}
               <p className="mt-2 text-sm wedding-text">003 017 666</p>
               <p className="mt-2 text-sm wedding-text">PHON V.& OEUN V.</p>
             </div>
           </div>
 
-          <div>
-            <p className='font-kantumruy !text-[#e70ab2]'>
-              ទំនាក់ទំនងម្ចាស់កម្មវិធី
-            </p>
-            <p className='font-kantumruy !text-[#e70ab2]'>
-              089 788 677
-            </p>
-            <p className='font-kantumruy !text-[#e70ab2]'>
-              012 585 676
-            </p>
+          {/* Contact Info */}
+          <div style={{paddingTop: '15px'}} className="text-center space-y-1">
+            <p className='font-kantumruy !text-[#e70ab2]' style={{fontSize: "18px", fontWeight: "800"}}>ទំនាក់ទំនងម្ចាស់កម្មវិធី</p>
+            <p className='font-kantumruy !text-[#e70ab2]' style={{fontSize: "18px", fontWeight: "800"}}>089 788 677</p>
+            <p className='font-kantumruy !text-[#e70ab2]' style={{fontSize: "18px", fontWeight: "800"}}>012 585 676</p>
           </div>
         </motion.div>
       </div>
 
-      {/* Footer */}
+      {/* ✅ Popup Modal for Map QR */}
+      {showMap && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
+          onClick={() => setShowMap(false)}
+        >
+          <motion.img
+            src={mapQr}
+            alt="Map QR enlarged"
+            className="max-w-[90%] max-h-[90%] rounded-xl shadow-2xl"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.3 }}
+          />
+        </div>
+      )}
+
+      {/* ✅ Footer section (kept from your original code) */}
       <motion.div 
         className="max-w-2xl mx-auto text-center fade-in"
         initial={{ opacity: 0 }}
