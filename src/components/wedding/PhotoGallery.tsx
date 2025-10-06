@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 import img1 from "../images/image/img1.jpg";
 import img2 from "../images/image/img2.jpg";
@@ -22,149 +22,345 @@ import img19 from "../images/image/img19.jpg";
 import img20 from "../images/image/img20.jpg";
 import img21 from "../images/image/img21.jpg";
 
+
 const photos = [
-  img1,img2,img3,img4,img5,img6,img7,img8,img9,
-  img10,img11,img12,img13,img14,img15,img16,img17,img19,img20,img21
+  img1,
+  img2, 
+  img3,
+  img4,
+  img5,
+  img6,
+  img7,
+  img8,
+  img9, 
+  img10,
+  img11,
+  img12,
+  img13,
+  img14,
+  img15,
+  img16,
+  img17,
+  img19,
+  img20,
+  img21,
 ];
 
 export const PhotoGallery = () => {
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-  const [direction, setDirection] = useState(0); // 1 = next, -1 = prev
-
-  // Keyboard navigation
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (selectedIndex === null) return;
-      if (e.key === "ArrowRight") handleNext();
-      if (e.key === "ArrowLeft") handlePrev();
-      if (e.key === "Escape") setSelectedIndex(null);
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [selectedIndex]);
-
-  const handleNext = () => {
-    setDirection(1);
-    setSelectedIndex((selectedIndex! + 1) % photos.length);
-  };
-
-  const handlePrev = () => {
-    setDirection(-1);
-    setSelectedIndex((selectedIndex! - 1 + photos.length) % photos.length);
-  };
-
-  // Motion variants for sliding
-  const variants = {
-    enter: (direction: number) => ({
-      x: direction > 0 ? 300 : -300,
-      opacity: 0
-    }),
-    center: { x: 0, opacity: 1 },
-    exit: (direction: number) => ({
-      x: direction > 0 ? -300 : 300,
-      opacity: 0
-    })
-  };
-
-  const layoutSlices = [
-    [0], [1,2], [3], [4,5], [6], [7,8], [9], [10,11], [12], [13,14,15,16], [17], [18,19]
-  ];
+  const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
 
   return (
     <section className="py-6 px-6">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-center mb-6 text-[24px] text-yellow-400" style={{ fontFamily: 'Moulpali' }}>
-          <u>វិស្សុត&វិច្ឆិកា </u>
+        <h2 className="text-center mb-6 text-[24px] text-yellow-400" style={{ fontFamily: "Moul" }}>
+          វិស្សុត 💗 វិច្ឆិកា
         </h2>
 
         <div className="space-y-1">
-          {layoutSlices.map((slice, sectionIndex) => {
-            const isTwoColumn = slice.length > 1;
-            return (
-              <div
-                key={sectionIndex}
-                className={`grid ${isTwoColumn ? "grid-cols-2 gap-1 place-items-center" : "grid-cols-1 gap-4"}`}
+          {/* Top Section: one images side by side */}
+          <div className="grid grid-cols-1 gi gap-4">
+            {photos.slice(0, 1).map((photo, index) => (
+              <motion.div
+                key={index}
+                className="rounded-lg overflow-hidden cursor-pointer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                onClick={() => setSelectedPhoto(photo)}
               >
-                {slice.map((photoIndex) => (
-                  <motion.div
-                    key={photoIndex}
-                    className="rounded-lg overflow-hidden cursor-pointer"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 0.6 }}
-                    onClick={() => setSelectedIndex(photoIndex)}
-                  >
-                    <img
-                      src={photos[photoIndex]}
-                      alt={`Wedding photo ${photoIndex + 1}`}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                  </motion.div>
-                ))}
-              </div>
-            );
-          })}
+                <img
+                  src={photo}
+                  alt={`Wedding photo ${index + 2}`}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Top Section: Two images side by side */}
+          <div className="grid grid-cols-2 gap-1 place-items-center">
+              {photos.slice(1,3).map((photo, index) => (
+                <motion.div
+                key={index}
+                className="rounded-lg overflow-hidden cursor-pointer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                onClick={() => setSelectedPhoto(photo)}
+              >
+                <img
+                  src={photo}
+                  alt={`Wedding photo ${index + 8}`}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 gi gap-4">
+            {photos.slice(3, 4).map((photo, index) => (
+              <motion.div
+                key={index}
+                className="rounded-lg overflow-hidden cursor-pointer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                onClick={() => setSelectedPhoto(photo)}
+              >
+                <img
+                  src={photo}
+                  alt={`Wedding photo ${index + 2}`}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Top Section: Two images side by side */}
+          <div className="grid grid-cols-2 gap-1 place-items-center">
+              {photos.slice(4,6).map((photo, index) => (
+                <motion.div
+                key={index}
+                className="rounded-lg overflow-hidden cursor-pointer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                onClick={() => setSelectedPhoto(photo)}
+              >
+                <img
+                  src={photo}
+                  alt={`Wedding photo ${index + 8}`}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </motion.div>
+            ))}
+          </div>
+           
+          <div className="grid grid-cols-1 gi gap-4">
+            {photos.slice(6, 7).map((photo, index) => (
+              <motion.div
+                key={index}
+                className="rounded-lg overflow-hidden cursor-pointer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                onClick={() => setSelectedPhoto(photo)}
+              >
+                <img
+                  src={photo}
+                  alt={`Wedding photo ${index + 2}`}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-2 gap-1 place-items-center">
+            {photos.slice(7, 9).map((photo, index) => (
+              <motion.div
+                key={index}
+                className="rounded-lg overflow-hidden cursor-pointer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                onClick={() => setSelectedPhoto(photo)}
+              >
+                <img
+                  src={photo}
+                  alt={`Wedding photo ${index + 2}`}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </motion.div>
+            ))}
+          </div>
+            
+            <div className="grid grid-cols-1 gi gap-4">
+            {photos.slice(9, 10).map((photo, index) => (
+              <motion.div
+                key={index}
+                className="rounded-lg overflow-hidden cursor-pointer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                onClick={() => setSelectedPhoto(photo)}
+              >
+                <img
+                  src={photo}
+                  alt={`Wedding photo ${index + 2}`}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-2 gap-1 place-items-center">
+            {photos.slice(10, 12).map((photo, index) => (
+              <motion.div
+                key={index}
+                className="rounded-lg overflow-hidden cursor-pointer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                onClick={() => setSelectedPhoto(photo)}
+              >
+                <img
+                  src={photo}
+                  alt={`Wedding photo ${index + 2}`}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 gi gap-4">
+            {photos.slice(12, 13).map((photo, index) => (
+              <motion.div
+                key={index}
+                className="rounded-lg overflow-hidden cursor-pointer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                onClick={() => setSelectedPhoto(photo)}
+              >
+                <img
+                  src={photo}
+                  alt={`Wedding photo ${index + 2}`}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-2 gap-1 place-items-center">
+            {photos.slice(13, 17).map((photo, index) => (
+              <motion.div
+                key={index}
+                className="rounded-lg overflow-hidden cursor-pointer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                onClick={() => setSelectedPhoto(photo)}
+              >
+                <img
+                  src={photo}
+                  alt={`Wedding photo ${index + 2}`}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 gi gap-4">
+            {photos.slice(17, 18).map((photo, index) => (
+              <motion.div
+                key={index}
+                className="rounded-lg overflow-hidden cursor-pointer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                onClick={() => setSelectedPhoto(photo)}
+              >
+                <img
+                  src={photo}
+                  alt={`Wedding photo ${index + 2}`}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-2 gap-1 place-items-center">
+            {photos.slice(18, 21).map((photo, index) => (
+              <motion.div
+                key={index}
+                className="rounded-lg overflow-hidden cursor-pointer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                onClick={() => setSelectedPhoto(photo)}
+              >
+                <img
+                  src={photo}
+                  alt={`Wedding photo ${index + 2}`}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </motion.div>
+            ))}
+          </div>
+
         </div>
       </div>
 
       {/* Modal */}
-      <AnimatePresence initial={false} custom={direction}>
-        {selectedIndex !== null && (
-          <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90"
-            onClick={() => setSelectedIndex(null)}
+      {selectedPhoto && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-"
+          onClick={() => setSelectedPhoto(null)}
+        >
+          <motion.img
+            src={selectedPhoto}
+            alt="Enlarged wedding photo"
+            className="max-w-full max-h-full object-contain rounded-lg"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.3 }}
+          />
+          <button
+            className="absolute top-4 right-4 text-white text-4xl hover:text-yellow-400"
+            onClick={() => setSelectedPhoto(null)}
           >
-            <motion.img
-              key={selectedIndex}
-              src={photos[selectedIndex]}
-              alt="Enlarged"
-              className="max-w-full max-h-full object-contain rounded-lg cursor-grab"
-              custom={direction}
-              variants={variants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={{ duration: 0.4 }}
-              drag="x"
-              dragConstraints={{ left: 0, right: 0 }}
-              dragElastic={0.2}
-              onDragEnd={(e, { offset, velocity }) => {
-                if (offset.x > 100 || velocity.x > 500) handlePrev();
-                else if (offset.x < -100 || velocity.x < -500) handleNext();
-              }}
-              onClick={(e) => e.stopPropagation()}
-            />
-
-            {/* Close */}
-            <button
-              className="absolute top-4 right-4 text-white text-4xl hover:text-yellow-400"
-              onClick={() => setSelectedIndex(null)}
-            >
-              ×
-            </button>
-
-            {/* Previous */}
-            <button
-              className="absolute left-4 text-white text-4xl hover:text-yellow-400"
-              onClick={(e) => { e.stopPropagation(); handlePrev(); }}
-            >
-              ‹
-            </button>
-
-            {/* Next */}
-            <button
-              className="absolute right-4 text-white text-4xl hover:text-yellow-400"
-              onClick={(e) => { e.stopPropagation(); handleNext(); }}
-            >
-              ›
-            </button>
-          </div>
-        )}
-      </AnimatePresence>
+            ×
+          </button>
+        </div>
+      )}
     </section>
   );
 };
