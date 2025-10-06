@@ -6,7 +6,8 @@ import { PhotoGallery } from './PhotoGallery';
 import { WeddingSchedule } from './WeddingSchedule';
 import { RSVPSection } from './RSVPSection';
 import { Button } from '@/components/ui/button';
-import openingImg from '../images/cover/cover3.gif';
+import openingImg from '../images/cover/cover4.gif';
+import open from '../images/cover/open.gif';
 
 // 🎵 Import local audio
 import weddingSong from '../adio_background/audio_bk.mp3';
@@ -74,11 +75,11 @@ export const WeddingInvitation = () => {
                 variant="ghost-belnd"
                 className="p-0 hover:scale-105 transition-transform duration-300"
               >
-                <img
-                  src="https://i.ibb.co/Cpj2tJsB/open-km.webp"
-                  alt="Open Invitation"
-                  className="w-15 h-16"
-                />
+                 <img
+                    src={open}
+                    alt="Open..."
+                    className="w-[280px] h-[140px] object-cover animate-pulse-60s"
+                  />
               </Button>
 
               <p className="text-[12px] wedding-text" style={{ fontFamily: 'Hanuman' }}>
