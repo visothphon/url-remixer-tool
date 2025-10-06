@@ -12,10 +12,11 @@
   <meta property="og:description"
     content="សិរីមង្គលអាពាហ៍ពិពាហ៍របស់ វិស្សុត និង វិច្ឆិកា - ថ្ងៃទី០២​ ខែវិច្ឆិកា ឆ្នាំ២០២៥" />
   <meta property="og:type" content="website" />
-
+  <meta property="og:image" content="https://vsvk-b4bc5.web.app/assets/img8-j4s50LNP.jpg" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@lovable_dev" />
+  <meta name="twitter:image" content="https://vsvk-b4bc5.web.app/assets/img8-j4s50LNP.jpg" />
 
   <!-- ✅ Add Google Fonts here -->
   <link
@@ -51,27 +52,24 @@
 
   }
 
+  body {
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
 
-  #root {
-    position: relative;
-    width: 100%;
-    height: auto;
-    background-image: url('./src/components/images/cover/cover5.gif');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    z-index: 0;
-    /* make sure it's under your content */
-  }
-
-  /* optional overlay tint */
-  #root::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-  }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: url('https://raw.githubusercontent.com/visothphon/url-remixer-tool/main/src/components/images/cover/cover5.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
 </style>
 
 <body>
@@ -80,6 +78,7 @@
   </div>
   <div id="root">
     <script type="module" src="/src/main.tsx"></script>
+  </div>
 </body>
 
 </html>

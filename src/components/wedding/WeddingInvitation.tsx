@@ -6,7 +6,8 @@ import { PhotoGallery } from './PhotoGallery';
 import { WeddingSchedule } from './WeddingSchedule';
 import { RSVPSection } from './RSVPSection';
 import { Button } from '@/components/ui/button';
-import openingImg from '../images/cover/cover4.gif';
+// import openingImg from '../images/cover/cover4.gif';
+import openingImg from 'https://raw.githubusercontent.com/visothphon/url-remixer-tool/main/src/components/images/cover/cover5.gif';
 import open from '../images/cover/open.gif';
 
 // 🎵 Import local audio
@@ -32,7 +33,7 @@ export const WeddingInvitation = () => {
     // show details after delay
     setTimeout(() => {
       setShowDetails(true);
-    }, 1500);
+    }, 2500);
   };
 
   return (
@@ -65,7 +66,7 @@ export const WeddingInvitation = () => {
                 សូមគោរពអញ្ជើញ
               </p>
               <h1 className="text-[18px] font-bold wedding-text" style={{ fontFamily: 'Bayon' }}>
-                ភ្ញៀវកិត្តិយស ក្នុងពិធីរៀបអាពាហ៍ពិពាហ៍របស់យើងខ្ញុំ hi
+                ភ្ញៀវកិត្តិយស ក្នុងពិធីរៀបអាពាហ៍ពិពាហ៍របស់យើងខ្ញុំ
               </h1>
             </div>
 
