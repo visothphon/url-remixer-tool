@@ -23,6 +23,11 @@
     }
     h1, h2, h3, h4, h5, h6 { font-family: 'Moul', cursive; }
     .title { font-family: 'Bayon', sans-serif; }
+    html, body {
+      margin: 0; padding: 0; height: 100%; width: 100%;
+      font-family: 'Hanuman', sans-serif;
+      overflow-x: hidden;
+    }
     #background-video {
       position: fixed;
       top: 0; left: 0;
@@ -30,17 +35,10 @@
       object-fit: cover;
       z-index: -1;
       pointer-events: none;
-      background: black;
-    }
-    #background-video::-webkit-media-controls { display: none !important; }
-    video::-webkit-media-controls-start-playback-button {
-      display: none !important;
-      -webkit-appearance: none;
     }
     #root { position: relative; z-index: 1; }
   </style>
 </head>
-
 <body>
   <video
     id="background-video"
@@ -49,17 +47,17 @@
     loop
     playsinline
     preload="auto"
-    disablepictureinpicture
-    controlslist="nodownload nofullscreen noremoteplayback"
-    tabindex="-1"
-    aria-hidden="true"
   >
-    <source src="/cover5.webm" type="video/webm" />
-    <!-- Fallback text for old browsers -->
-    Your browser does not support the video tag.
+    <source src="/cover5.mp4" type="video/mp4" />
   </video>
   <div id="root">
     <script type="module" src="/src/main.tsx"></script>
   </div>
+ <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var v = document.getElementById('bgvid');
+      if (v) v.play().catch(()=>{});
+    });
+  </script>
 </body>
 </html>
