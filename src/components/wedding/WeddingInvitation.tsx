@@ -6,8 +6,7 @@ import { PhotoGallery } from './PhotoGallery';
 import { WeddingSchedule } from './WeddingSchedule';
 import { RSVPSection } from './RSVPSection';
 import { Button } from '@/components/ui/button';
-// import openingImg from '../images/cover/cover4.gif';
-import openingImg from 'https://raw.githubusercontent.com/visothphon/url-remixer-tool/main/src/components/images/cover/cover5.gif';
+import openingImg from '../images/cover/cover4.gif';
 import open from '../images/cover/open.gif';
 
 // 🎵 Import local audio
@@ -33,7 +32,7 @@ export const WeddingInvitation = () => {
     // show details after delay
     setTimeout(() => {
       setShowDetails(true);
-    }, 2500);
+    }, 3500);
   };
 
   return (

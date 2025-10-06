@@ -49,36 +49,153 @@
   /* Optional special title */
   .title {
     font-family: 'Bayon', sans-serif;
-
+  }
+  
+  #background-video {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none;
+    background-color: black;
   }
 
-  body {
-  margin: 0;
-  min-height: 100vh;
-  position: relative;
-  overflow-x: hidden;
-}
+  #background-video::-webkit-media-controls {
+    display: none !important;
+  }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background-image: url('https://raw.githubusercontent.com/visothphon/url-remixer-tool/main/src/components/images/cover/cover5.gif');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  pointer-events: none;
-}
+  #root {
+    position: relative;
+    z-index: 1;
+  }
 </style>
 
 <body>
-  <div id="background">
-    <!-- <img src="/src/components/images/cover/cover4.gif" alt="Background" /> -->
-  </div>
+  <video
+    id="background-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="auto"
+    disablepictureinpicture
+    controlslist="nodownload nofullscreen noremoteplayback"
+  >
+    <source src="/cover5.mp4" type="video/mp4" playsinline/>
+  </video>
   <div id="root">
     <script type="module" src="/src/main.tsx"></script>
   </div>
 </body>
+<!doctype html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>វិស្សុត & វិច្ឆិកា - សិរីមង្គលអាពាហ៍ពិពាហ៍</title>
+  <meta name="description" content="សិរីមង្គលអាពាហ៍ពិពាហ៍របស់ វិស្សុត និង វិច្ឆិកា - ថ្ងៃទី០២ ខែវិច្ឆិកា ឆ្នាំ២០២៥" />
+  <meta name="author" content="Visoth&Vichhka Wedding Invitations" />
+
+  <meta property="og:title" content="វិស្សុត & វិច្ឆិកា - សិរីមង្គលអាពាហ៍ពិពាហ៍" />
+  <meta property="og:description"
+    content="សិរីមង្គលអាពាហ៍ពិពាហ៍របស់ វិស្សុត និង វិច្ឆិកា - ថ្ងៃទី០២​ ខែវិច្ឆិកា ឆ្នាំ២០២៥" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://vsvk-b4bc5.web.app/assets/img8-j4s50LNP.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@lovable_dev" />
+  <meta name="twitter:image" content="https://vsvk-b4bc5.web.app/assets/img8-j4s50LNP.jpg" />
+
+  <!-- ✅ Add Google Fonts here -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hanuman:wght@400;700&family=Moul&family=Bayon&display=swap&subset=khmer"
+    rel="stylesheet" />
+
+</head>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Hanuman', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Headings use Moul */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Moul', cursive;
+  }
+
+  /* Optional special title */
+  .title {
+    font-family: 'Bayon', sans-serif;
+  }
+  
+  #background-video {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none;
+    background-color: black;
+  }
+
+  #background-video::-webkit-media-controls {
+    display: none !important;
+  }
+
+  #root {
+    position: relative;
+    z-index: 1;
+  }
+</style>
+
+<body>
+  <video
+    id="background-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="auto"
+    disablepictureinpicture
+    controlslist="nodownload nofullscreen noremoteplayback"
+    poster="https://raw.githubusercontent.com/visothphon/url-remixer-tool/main/src/components/images/cover5.jpg"
+  >
+    <source src="https://raw.githubusercontent.com/visothphon/url-remixer-tool/main/src/components/videos/cover5.mp4" type="video/mp4" />
+  </video>
+  <div id="root">
+    <script type="module" src="/src/main.tsx"></script>
+  </div>
+</body>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const video = document.getElementById('background-video');
+    if (video && video.paused) {
+      video.play().catch(() => {
+        // Fallback: user interaction
+        const handler = () => {
+          video.play();
+          document.removeEventListener('touchstart', handler);
+        };
+        document.addEventListener('touchstart', handler);
+      });
+    }
+  });
+</script>
 </html>

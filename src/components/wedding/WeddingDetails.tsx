@@ -141,7 +141,7 @@ export const WeddingDetails = () => {
             className="flex flex-col items-end space-y-2 text-right"
           >
             <p className="text-yellow-400 wedding koulen">លោក លេស សំអឿន</p>
-            <p className="text-yellow-400 wedding koulen">លោកស្រី វិ សាវឿន</p>
+            <p className="text-yellow-400 wedding koulen">លោកស្រី វិ សាវឿត</p>
           </motion.div>
         </div>
       </motion.div>
