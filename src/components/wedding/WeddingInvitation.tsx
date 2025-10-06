@@ -72,7 +72,7 @@ export const WeddingInvitation = () => {
             <div className="mt-10 fade-in">
               <Button
                 onClick={handleOpenInvitation}
-                variant="ghost-belnd"
+                variant="ghost-blend"
                 className="p-0 hover:scale-105 transition-transform duration-300"
               >
                  <img
