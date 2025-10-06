@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import WeddingLogo from '../images/logo/logo.png'
 
 
+
 export const WeddingDetails = () => {
   return (
     <div className="relative justify-center text-center mt-28">
@@ -250,7 +251,7 @@ export const WeddingDetails = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.9 }}
           viewport={{ once: true }}
-          className="mt-12 space-y-2"
+          className="mt-12 space-y-6"
         >
             <p className="text-lg text-yellow-400 wedding-text" style={{ fontFamily: "Kantumruy" }}>
               ដែលនឹងប្រព្រឹត្តទៅត្រូវនឹងថ្ងៃអាទិត្យ ១២កើត ខែកត្តិក ឆ្នាំម្សាញ់ សប្តស័ក ព.ស២៥៦៩

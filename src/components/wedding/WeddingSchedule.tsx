@@ -149,19 +149,20 @@ export const WeddingSchedule = () => {
         transition={{ duration: 1.5, delay: 0.6 }}
       >
         <div className="mt-20 pt-12 border-t border-primary/20 weeding-text">
-          <div className="wedding-text opacity-60 text-sm space-y-2">
-            <p className='font-kantumruy'>តើលោកអ្នកចាប់អារម្មណ៍នឹងប្រើប្រាស់សេវាកម្មរបស់ពួកយើងដែរឬទេ?</p>
-            <p className='font-kantumruy'>ទាក់ទងមកកាន់ពួកយើងឥឡូវនេះ</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-4">
-              <a href="tel:098456866" className="wedding-text hover:opacity-80 font-kantumruy">
-                លេខទូរស័ព្ទ: 016667892
-              </a>
-              <a href="mailto:ananisai.kh@gmail.com" className="wedding-text hover:opacity-80">
-                E-mail: tunsinchhiv@gmail.com
-              </a>
-            </div>
-          </div>
-        </div>
+  <div className="wedding-text text-black text-sm space-y-2">
+    <p className="font-kantumruy hover:opacity-80 text-black">តើលោកអ្នកចាប់អារម្មណ៍នឹងប្រើប្រាស់សេវាកម្មរបស់ពួកយើងដែរឬទេ?</p>
+    <p className="font-kantumruy hover:opacity-80 text-black">ទាក់ទងមកកាន់ពួកយើងឥឡូវនេះ</p>
+    <div className="flex flex-col sm:flex-row gap-4 justify-center mt-4">
+      <a href="tel:098456866" className="hover:opacity-80 font-kantumruy text-black">
+        លេខទូរស័ព្ទ: 016667892
+      </a>
+      <a href="mailto:ananisai.kh@gmail.com" className="hover:opacity-80 text-black">
+        E-mail: tunsinchhiv@gmail.com
+      </a>
+    </div>
+  </div>
+</div>
+
       </motion.div>
     </motion.section>
   );

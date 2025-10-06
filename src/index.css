@@ -15,14 +15,14 @@ All colors MUST be HSL.
 /* Hanuman */
 @font-face {
   font-family: 'Hanuman';
-  src: url('/fonts/Hanuman-Regular.ttf') format('truetype');
+  src: url('/src/fonts/Hanuman-VariableFont_wght.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Hanuman';
-  src: url('/fonts/Hanuman-Bold.ttf') format('truetype');
+  src: url('/src/fonts/Hanuman-VariableFont_wght.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
@@ -72,8 +72,13 @@ All colors MUST be HSL.
   }
 
   .container {
-    padding: 10px;
+    padding: 8px;
   }
+  body::before {
+    background-image: url('/src/components/images/cover/cover4.jpg');
+    background-attachment: scroll;
+  }
+
 }
 
 @layer base {

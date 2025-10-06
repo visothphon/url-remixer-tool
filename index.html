@@ -1,78 +1,94 @@
 <!doctype html>
 <html lang="en">
-  
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>វិស្សុត & វិច្ឆិកា - សិរីមង្គលអាពាហ៍ពិពាហ៍</title>
-    <meta name="description" content="សិរីមង្គលអាពាហ៍ពិពាហ៍របស់ វិស្សុត និង វិច្ឆិកា - ថ្ងៃទី០២ ខែវិច្ឆិកា ឆ្នាំ២០២៥" />
-    <meta name="author" content="Visoth&Vichhka Wedding Invitations" />
 
-    <meta property="og:title" content="វិស្សុត & វិច្ឆិកា - សិរីមង្គលអាពាហ៍ពិពាហ៍" />
-    <meta property="og:description" content="សិរីមង្គលអាពាហ៍ពិពាហ៍របស់ វិស្សុត និង វិច្ឆិកា - ថ្ងៃទី០២​ ខែវិច្ឆិកា ឆ្នាំ២០២៥" />
-    <meta property="og:type" content="website" />
-    
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>វិស្សុត & វិច្ឆិកា - សិរីមង្គលអាពាហ៍ពិពាហ៍</title>
+  <meta name="description" content="សិរីមង្គលអាពាហ៍ពិពាហ៍របស់ វិស្សុត និង វិច្ឆិកា - ថ្ងៃទី០២ ខែវិច្ឆិកា ឆ្នាំ២០២៥" />
+  <meta name="author" content="Visoth&Vichhka Wedding Invitations" />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
+  <meta property="og:title" content="វិស្សុត & វិច្ឆិកា - សិរីមង្គលអាពាហ៍ពិពាហ៍" />
+  <meta property="og:description"
+    content="សិរីមង្គលអាពាហ៍ពិពាហ៍របស់ វិស្សុត និង វិច្ឆិកា - ថ្ងៃទី០២​ ខែវិច្ឆិកា ឆ្នាំ២០២៥" />
+  <meta property="og:type" content="website" />
 
-    <!-- ✅ Add Google Fonts here -->
-    <link 
-      href="https://fonts.googleapis.com/css2?family=Hanuman:wght@400;700&family=Moul&family=Bayon&display=swap&subset=khmer" 
-      rel="stylesheet"
-    />
-    
-  </head>
 
-  <style>
-    
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      width: 100%;
-      font-family: 'Hanuman', sans-serif;
-      overflow-x: hidden;
-    }
-    /* Headings use Moul */
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'Moul', cursive;
-    }
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@lovable_dev" />
 
-    /* Optional special title */
-    .title {
-      font-family: 'Bayon', sans-serif;
+  <!-- ✅ Add Google Fonts here -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hanuman:wght@400;700&family=Moul&family=Bayon&display=swap&subset=khmer"
+    rel="stylesheet" />
 
-        }
 
-        
-    #root {
-      position: relative;
-      width: 100%;
-   height: auto;
-      /* background-image: url('./src/components/images/cover/cover5.gif'); */
-      background-image: url("https://raw.githubusercontent.com/visothphon/url-remixer-tool/main/src/components/images/cover/cover5.gif");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      z-index: 0; /* make sure it's under your content */
-    }
+</head>
 
-    #root::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: rgba(40, 40, 71, 0.05);
-        z-index: -1;
-      }
+<style>
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Hanuman', 'Moul', 'Bayon', sans-serif;
+  }
 
-  </style>
-  <body>
-    
-    
-    <div id="root"></div>
+  #background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+  }
 
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+  #background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  #root {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-image: url('./src/components/images/cover/cover5.gif');
+    /* background-image: url("https://raw.githubusercontent.com/visothphon/url-remixer-tool/main/src/components/images/cover/cover5.gif"); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: 0;
+    /* make sure it's under your content */
+  }
+
+  /* optional overlay tint */
+  #root::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(40, 40, 71, 0.05);
+    z-index: -1;
+  }
+</style>
+
+
+<body>
+  <!-- <div id="background">
+       <img src="/src/components/images/cover/cover4.gif" alt="Background" />
+    </div> -->
+  <div id="root">
+
+  </div>
+
+  <script type="module" src="/src/main.tsx">
+
+  </script>
+
+</body>
+
 </html>

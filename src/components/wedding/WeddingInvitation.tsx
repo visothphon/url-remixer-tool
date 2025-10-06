@@ -6,7 +6,9 @@ import { PhotoGallery } from './PhotoGallery';
 import { WeddingSchedule } from './WeddingSchedule';
 import { RSVPSection } from './RSVPSection';
 import { Button } from '@/components/ui/button';
-import openingImg from '../images/cover/cover3.gif';
+import openingImg from '../images/cover/cover4.gif';
+import open from '../images/cover/open.gif';
+
 
 // 🎵 Import local audio
 import weddingSong from '../adio_background/audio_bk.mp3';
@@ -75,12 +77,13 @@ export const WeddingInvitation = () => {
                 className="p-0 hover:scale-105 transition-transform duration-300"
               >
                 <img
-                  src="https://i.ibb.co/Cpj2tJsB/open-km.webp"
+                  src={open}
                   alt="Open Invitation"
                   className="w-15 h-16"
                 />
               </Button>
 
+            
               <p className="text-[12px] wedding-text" style={{ fontFamily: 'Hanuman' }}>
                 សូមមេត្តាចុចលើអេក្រង់ដើម្បីបើកធៀបអេឡិចត្រូនិច
               </p>
@@ -88,14 +91,10 @@ export const WeddingInvitation = () => {
           </div>
         )}
 
-        {/* Spacer while Opening GIF plays */}
-        {showImage && !showDetails && (
-          <div className="min-h-screen" />
-        )}
-
         {/* Main Wedding Details */}
         {showDetails && (
           <div className="max-w-6xl mx-auto px-6 py-20 space-y-20 fade-in">
+            <AnimatedBackground/>
             <WeddingDetails />
             <PhotoGallery />
             <WeddingSchedule />
