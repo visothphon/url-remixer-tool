@@ -32,7 +32,7 @@ export const WeddingInvitation = () => {
     // show details after delay
     setTimeout(() => {
       setShowDetails(true);
-    }, 1500);
+    }, 3500);
   };
 
   return (
@@ -65,7 +65,7 @@ export const WeddingInvitation = () => {
                 សូមគោរពអញ្ជើញ
               </p>
               <h1 className="text-[18px] font-bold wedding-text" style={{ fontFamily: 'Bayon' }}>
-                ភ្ញៀវកិត្តិយស ក្នុងពិធីរៀបអាពាហ៍ពិពាហ៍របស់យើងខ្ញុំ hi
+                ភ្ញៀវកិត្តិយស ក្នុងពិធីរៀបអាពាហ៍ពិពាហ៍របស់យើងខ្ញុំ
               </h1>
             </div>
 
