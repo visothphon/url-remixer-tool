@@ -32,7 +32,7 @@ export const WeddingInvitation = () => {
     // show details after delay
     setTimeout(() => {
       setShowDetails(true);
-    }, 4000);
+    }, 5000);
   };
 
   // Effect to try to play video when it appears

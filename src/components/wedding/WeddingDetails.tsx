@@ -7,7 +7,7 @@ const ScrollDownButton = ({ onClick }) => (
   <motion.button
     initial={{ opacity: 0, y: 300 }}
     animate={{ opacity: 1, y: [0, 18, 0] }}
-    transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
+    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
     className="flex flex-col items-center mx-auto mt-28 focus:outline-none"
     onClick={onClick}
     style={{ background: "transparent", border: "none", cursor: "pointer" }}
