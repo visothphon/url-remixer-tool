@@ -190,7 +190,7 @@ export const WeddingDetails = () => {
   const handleScrollDown = () => {
     const section = document.getElementById("second-section");
     if (section) {
-      const offset = -230; // adjust upward (try -80 or -120)
+      const offset = -300; // adjust upward (try -80 or -120)
       const top =
         section.getBoundingClientRect().top + window.pageYOffset + offset;
       window.scrollTo({ top, behavior: "smooth" });
