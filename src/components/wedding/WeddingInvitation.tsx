@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { AnimatedBackground } from './AnimatedBackground';
 import { WeddingLogo } from './WeddingLogo';
 import { WeddingDetails } from './WeddingDetails';
@@ -6,7 +6,7 @@ import { PhotoGallery } from './PhotoGallery';
 import { WeddingSchedule } from './WeddingSchedule';
 import { RSVPSection } from './RSVPSection';
 import { Button } from '@/components/ui/button';
-import openingImg from '../images/cover/cover4.gif';
+// import openingImg from '../images/cover/cover4.gif';
 import open from '../images/cover/open.gif';
 
 // 🎵 Import local audio
@@ -16,8 +16,8 @@ export const WeddingInvitation = () => {
   const [showImage, setShowImage] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
 
-  // audio ref
   const audioRef = useRef<HTMLAudioElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const handleOpenInvitation = () => {
     setShowImage(true);
@@ -32,21 +32,34 @@ export const WeddingInvitation = () => {
     // show details after delay
     setTimeout(() => {
       setShowDetails(true);
-    }, 3500);
+    }, 4000);
   };
+
+  // Effect to try to play video when it appears
+  useEffect(() => {
+    if (showImage && !showDetails && videoRef.current) {
+      videoRef.current.play().catch(() => {});
+    }
+  }, [showImage, showDetails]);
 
   return (
     <div className="relative min-h-screen">
-
       {/* ===== Fixed Background Layer ===== */}
       <div className="fixed inset-0 w-full h-full z-0">
         <AnimatedBackground />
         {showImage && !showDetails && (
-          <img
-            src={openingImg}
-            alt="Opening..."
-            className="w-full h-full object-cover animate-pulse-60s"
-          />
+          <video
+            id="background-video"
+            ref={videoRef}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          >
+            <source src="/cover4.mp4" type="video/mp4" />
+          </video>
         )}
       </div>
 
@@ -55,7 +68,6 @@ export const WeddingInvitation = () => {
 
       {/* ===== Foreground Content ===== */}
       <div className="relative z-10">
-
         {/* Initial Open Invitation Screen */}
         {!showImage && !showDetails && (
           <div className="flex flex-col items-center justify-center min-h-screen text-center px-6">
@@ -75,11 +87,11 @@ export const WeddingInvitation = () => {
                 variant="ghost-blend"
                 className="p-0 hover:scale-105 transition-transform duration-300"
               >
-                 <img
-                    src={open}
-                    alt="Open..."
-                    className="w-[280px] h-[140px] object-cover animate-pulse-60s"
-                  />
+                <img
+                  src={open}
+                  alt="Open..."
+                  className="w-[280px] h-[140px] object-cover animate-pulse-60s"
+                />
               </Button>
 
               <p className="text-[12px] wedding-text" style={{ fontFamily: 'Hanuman' }}>
@@ -103,7 +115,6 @@ export const WeddingInvitation = () => {
             {/* <RSVPSection /> */}
           </div>
         )}
-
       </div>
     </div>
   );
