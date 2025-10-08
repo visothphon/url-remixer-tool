@@ -144,21 +144,21 @@ export const WeddingSchedule = () => {
           {/* Contact Info */}
           <div style={{ paddingTop: "20px" }} className="text-center space-y-1">
             <p
-              className="font-kantumruy !text-[#e70ab2]"
+              className="font-kantumruy !text-[#ffb2ba]"
               style={{ fontSize: "16px", fontWeight: "800" }}
             >
               ទំនាក់ទំនងម្ចាស់កម្មវិធី
             </p>
             <a
               href="tel:089788677"
-              className="font-kantumruy !text-[#e70ab2]"
+              className="font-kantumruy !text-[#ffb2ba]"
               style={{ fontSize: "16px", fontWeight: "800", display: "block" }}
             >
               089 788 677
             </a>
             <a
               href="tel:012585676"
-              className="font-kantumruy !text-[#e70ab2]"
+              className="font-kantumruy !text-[#ffb2ba]"
               style={{ fontSize: "16px", fontWeight: "800", display: "block" }}
             >
               012 585 676

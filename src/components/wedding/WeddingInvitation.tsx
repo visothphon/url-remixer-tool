@@ -73,12 +73,12 @@ export const WeddingInvitation = () => {
           <div className="flex flex-col items-center justify-center min-h-screen text-center px-6">
             <WeddingLogo />
             <div className="mt-8 space-y-4 fade-in">
-              <p className="text-[16px] wedding-text" style={{ fontFamily: 'Hanuman' }}>
+              <p className="text-[16px] wedding-text" style={{ fontFamily: 'Kantumruy' }}>
                 សូមគោរពអញ្ជើញ
               </p>
-              <h1 className="text-[18px] font-bold wedding-text" style={{ fontFamily: 'Bayon' }}>
+              <p className="text-[16px] wedding-text" style={{ fontFamily: 'Moul' }}>
                 ភ្ញៀវកិត្តិយស ក្នុងពិធីរៀបអាពាហ៍ពិពាហ៍របស់យើងខ្ញុំ
-              </h1>
+              </p>
             </div>
 
             <div className="mt-10 fade-in">
@@ -93,8 +93,7 @@ export const WeddingInvitation = () => {
                   className="w-[280px] h-[140px] object-cover animate-pulse-60s"
                 />
               </Button>
-
-              <p className="text-[12px] wedding-text" style={{ fontFamily: 'Hanuman' }}>
+              <p className="text-[12px] wedding-text" style={{ fontFamily: 'Kantumruy' }}>
                 សូមមេត្តាចុចលើអេក្រង់ដើម្បីបើកធៀបអេឡិចត្រូនិច
               </p>
             </div>
