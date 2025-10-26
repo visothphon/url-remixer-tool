@@ -69,14 +69,11 @@ export const WeddingSchedule = () => {
           className="mt-12 space-y-2"
         >
           <p className="text-lg text-yellow-400 wedding-text font-kantumruy">
-            ដែលនឹងប្រព្រឹត្តទៅត្រូវនឹងថ្ងៃទី០២ ខែវិច្ឆិកា ឆ្នាំ២០២៥ វេលាម៉ោង
+            ដែលនឹងប្រព្រឹត្តទៅត្រូវនឹងថ្ងៃអាទិត្យ ទី០២ ខែវិច្ឆិកា ឆ្នាំ២០២៥ វេលាម៉ោង
             ៥:០០នាទីល្ងាច
           </p>
           <p className="text-lg text-yellow-400 wedding-text font-kantumruy">
-            នៅមជ្ឃមណ្ឌល មហាសាល (អាគារA) ស្ថិតនៅ ក្រុងសិរីសោភ័ណ
-          </p>
-          <p className="text-lg text-yellow-400 wedding-text font-kantumruy">
-            ខេត្តបន្ទាយមានជ័យ ដោយមេត្រីភាព។
+            📍នៅមជ្ឃមណ្ឌល មហាសាល (អាគារA) ស្ថិតនៅ ក្រុងសិរីសោភ័ណ ខេត្តបន្ទាយមានជ័យ ដោយមេត្រីភាព។
           </p>
           <p className="text-lg text-yellow-400 wedding-text font-kantumruy">
             សូមអរគុណ!

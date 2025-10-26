@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import WeddingLogo from "../images/logo/logo.png";
+import Event from "../images/event/event.png"
 
 // ScrollDownButton component
 const ScrollDownButton = ({ onClick }) => (
@@ -278,13 +279,13 @@ export const WeddingDetails = () => {
         className="mt-12 space-y-2"
       >
         <p className="text-[16px] text-yellow-400 wedding-text font-kantumruy">
-          ដែលនឹងប្រព្រឹត្តទៅ
+          ដែលនឹងប្រព្រឹត្តទៅត្រូវនឹង
         </p>
         <h3
           className="font-bold text-[18px] !text-[#ffb2ba] wedding-text font-moul"
           style={{ marginTop: "15px" }}
         >
-          ត្រូវនឹងថ្ងៃទី០២ ខែវិច្ឆិកា ឆ្នាំ២០២៥
+          ថ្ងៃអាទិត្យ ទី០២ ខែវិច្ឆិកា ឆ្នាំ២០២៥
         </h3>
       </motion.div>
 
@@ -459,13 +460,7 @@ export const WeddingDetails = () => {
             className="text-lg text-yellow-400 wedding-text"
             style={{ fontFamily: "Kantumruy" }}
           >
-            នៅមជ្ឃមណ្ឌល មហាសាល (អាគារA) ស្ថិតនៅ ក្រុងសិរីសោភ័ណ
-          </p>
-          <p
-            className="text-lg text-yellow-400 wedding-text"
-            style={{ fontFamily: "Kantumruy" }}
-          >
-            ខេត្តបន្ទាយមានជ័យ ដោយមេត្រីភាព។
+            📍នៅមជ្ឃមណ្ឌល មហាសាល (អាគារA) ស្ថិតនៅ ក្រុងសិរីសោភ័ណ ខេត្តបន្ទាយមានជ័យ ដោយមេត្រីភាព។
           </p>
           <p
             className="text-lg text-yellow-400 wedding-text"
@@ -477,9 +472,22 @@ export const WeddingDetails = () => {
             className="font-bold text-[18px] !text-[#ffb2ba] wedding-text"
             style={{ fontFamily: "Moul" }}
           >
-            ថ្ងៃទី០២ ខែវិច្ឆិកា ឆ្នាំ២០២៥
+            ថ្ងៃអាទិត្យ ទី០២ ខែវិច្ឆិកា ឆ្នាំ២០២៥
           </h3>
         </motion.div>
+        <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1 }}
+            viewport={{ once: true }}
+            className="mt-6 flex justify-center"
+          >
+            <img
+              src={Event}
+              alt="Wedding Celebration"
+              className="w-100 md:w-100 rounded-2xl shadow-lg"
+            />
+          </motion.div>
       </motion.div>
     </div>
   );
